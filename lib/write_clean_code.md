@@ -15,8 +15,8 @@
 
 8. Class member user lowerCamelCase   
    lowerCamelCase :
-   8.1. Named Constructors
-   8.2. Methods / Functions 
-   8.3. Parameters / Named Parameters
-   8.4. Variables 
-   8.5. Constants  
+   8.1. Named Constructors  <!-- Ex : ButtonWidget() -->
+   8.2. Methods / Functions  <!-- Ex : ButtonWidget.longStretched() -->
+   8.3. Parameters / Named Parameters  <!-- Ex : method(String countryName){} -->
+   8.4. Variables  <!-- Ex :  String myVariable = "Hello" -->
+   8.5. Constants   <!-- Ex : const defaultTimeout = 1000 -->
