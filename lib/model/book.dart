@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class Book {
   final String id;
   final String title;
@@ -14,4 +16,9 @@ class Book {
     required this.coverImageUrl,
     required this.price,
   });
+  void updatePages(int pages) {
+    if (kDebugMode) {
+      print('Updating pages for book $id to $pages');
+    }
+  }
 }
