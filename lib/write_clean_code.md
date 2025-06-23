@@ -43,3 +43,16 @@
     get book {
     return 'value';
     }
+
+    // Getters are field-like for computations
+    // Method
+
+    // method returns value
+    // 1. noun phrase (what is returned)
+    String book (String title ) {} //parameters
+    get book {} // NO parameters
+
+    // 2. verb phrase (how is returned)
+    List<String> fetchBooks() {}
+    Future<List<String>> fetchBooks() {}
+    Future<List<String>> downloadBooks(){}
