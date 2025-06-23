@@ -30,3 +30,8 @@
         Prefer short, meaningful names for local variables and aim to keep your code lines brief for better readability and maintainability.
     <!--  Example: Use var name = 'John'; -->
     instead of a long or overly descriptive variable name unless necessary.
+
+11. Use Consistent Folder, File, Class Names
+
+12. Use Consistent Names 
+
