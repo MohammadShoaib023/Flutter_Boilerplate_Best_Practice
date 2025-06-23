@@ -1,6 +1,6 @@
 ### Write Clean Flutter code
 
-## Must
+## Must && Good
 
 1.  Name Callback : on + "verb"
 2.  Classes use UpperCamelCase
@@ -71,3 +71,18 @@
     void showBooks() {}
     void deleteBook() {}
     }
+
+16. Use "build..." prefix for widget-returning methods
+        When defining methods that return widgets,
+    prefix them with build to indicate that they construct part of the UI.
+    This improves code readability and makes the purpose of the method immediately clear.
+
+        Example:
+
+    Widget buildLoginButton() {
+    return ElevatedButton(
+    onPressed: () {},
+    child: Text('Login')
+    );
+
+}
