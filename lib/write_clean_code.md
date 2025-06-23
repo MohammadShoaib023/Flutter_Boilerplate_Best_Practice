@@ -53,6 +53,5 @@
     get book {} // NO parameters
 
     // 2. verb phrase (how is returned)
-    List<String> fetchBooks() {}
     Future<List<String>> fetchBooks() {}
     Future<List<String>> downloadBooks(){}
