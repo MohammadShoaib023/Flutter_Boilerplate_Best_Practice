@@ -29,9 +29,17 @@
 10. Use concise names and keep lines short
         Prefer short, meaningful names for local variables and aim to keep your code lines brief for better readability and maintainability.
     <!--  Example: Use var name = 'John'; -->
+
     instead of a long or overly descriptive variable name unless necessary.
 
 11. Use Consistent Folder, File, Class Names
 
-12. Use Consistent Names 
+12. Use Consistent Names
 
+13. Don't use "get" methods and make the name of method lower case
+
+    // method returns value
+
+    get book {
+    return 'value';
+    }
