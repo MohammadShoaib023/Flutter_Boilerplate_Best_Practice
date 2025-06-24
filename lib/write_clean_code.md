@@ -77,12 +77,17 @@
     prefix them with build to indicate that they construct part of the UI.
     This improves code readability and makes the purpose of the method immediately clear.
 
-        Example:
+            Example:
 
-    Widget buildLoginButton() {
-    return ElevatedButton(
-    onPressed: () {},
-    child: Text('Login')
-    );
+        Widget buildLoginButton() {
+        return ElevatedButton(
+        onPressed: () {},
+        child: Text('Login')
+        );
 
-}
+    }
+
+17. getters: prohibit side effects in getters
+
+- Ensure all getters are pure and free of side effects
+- Promotes testability and predictability in the codebase
