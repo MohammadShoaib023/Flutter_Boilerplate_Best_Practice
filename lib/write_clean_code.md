@@ -91,3 +91,8 @@
 
 - Ensure all getters are pure and free of side effects
 - Promotes testability and predictability in the codebase
+
+18. functions: enforce explicit return types for all functions
+
+- Improves code clarity and tooling support
+- Prevents unintended return type inference issues
