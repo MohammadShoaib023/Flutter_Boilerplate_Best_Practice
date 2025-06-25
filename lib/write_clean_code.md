@@ -96,3 +96,8 @@
 
 - Improves code clarity and tooling support
 - Prevents unintended return type inference issues
+  String getUserName() {
+      return 'John';
+  }
+
+19. Use Future<Type> as Return Type
