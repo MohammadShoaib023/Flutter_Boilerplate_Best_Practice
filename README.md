@@ -2,63 +2,150 @@
 
 This repository contains a clean and scalable Flutter boilerplate that follows strict conventions to ensure consistent, maintainable, and testable code.
 
-## ✅ Coding Conventions
+# 🧼 Write Clean Flutter Code – Best Practices
 
-### 📌 Naming Rules
-
-1. **Callbacks:** Name using `on` + _verb_  
-   → `onPressed`, `onTap`, `onFetchData`
-
-2. **Classes & Enums:** Use `UpperCamelCase`  
-   → `ButtonWidget`, `UserRole`
-
-3. **Class Members:** Use `lowerCamelCase`
-
-   - Named constructors → `ButtonWidget.stretched()`
-   - Methods/functions → `fetchData()`
-   - Parameters → `void fetchUser(String userId)`
-   - Variables → `final userName = 'John'`
-   - Constants → `const defaultTimeout = 1000`
-
-4. **Folders & Import Prefixes:** Use `snake_case`  
-   → `import 'package:my_app/utils/api_helper.dart' as api_helper`
-
-5. **File/Class Naming:** Ensure consistency across folder, file, and class names
-
-### ⚙️ Method & Getter Guidelines
-
-6. **Avoid `get` methods**:  
-   Do not use `get` to define behavior-returning methods. Use regular methods with appropriate naming instead.
-
-7. **Getters Must Be Pure**:  
-   No side effects like mutations, logging, I/O, or async operations in getters.
-
-8. **Method Names = Verb Phrases**:  
-   Describe actions clearly.  
-   → `uploadBook()`, `deleteAccount()`, `fetchData()`
-
-9. **UI Builders:**  
-   Prefix all widget-returning methods with `build`  
-   → `Widget buildLoginButton() {}`
+A consistent, scalable, and clean coding standard for building robust Flutter applications.
 
 ---
 
-### 🔍 Readability & Style
+## ✅ Must & Good Practices
 
-10. **No underscore (`_`) in local variables**  
-    Local variables are private by scope, no need for `_`
+### 📛 Naming Conventions
 
-11. **Use concise and meaningful names**  
-    Keep line lengths short and code clean  
-    → Prefer `name` over `userNameInDatabaseForQuery`
+1. **Callbacks:** Use `on` + verb  
+   → `onPressed`, `onTap`
 
-12. **Avoid unnecessary type declarations for local variables**  
-    → `var name = 'John';` instead of `String name = 'John';`
+2. **Classes & Enums:** Use `UpperCamelCase`  
+   → `LoginScreen`, `UserType`
 
-13. **Always define return types for functions**  
-    → `String getUserName() { return 'John'; }`
+3. **Avoid `get` keyword for methods**  
+   Do not name behavior-returning methods with `get`.
 
-14. **Use `Future<Type>` as return type for async methods**  
-    → `Future<List<Book>> fetchBooks()`
+4. **Avoid explicit types for local variables**  
+   Let Dart infer the type for cleaner code.  
+   ✅ `var name = 'John';`
+
+5. **Use `snake_case` for folders**
+
+6. **Prefix imports using `snake_case`**  
+   → `import 'utils/helper.dart' as helper_utils;`
+
+---
+
+### 🏗 Class & Member Style
+
+7. **Class & Enum Names:** Use `UpperCamelCase`  
+   → `LoginForm`, `ApiResponseType`
+
+8. **Members:** Use `lowerCamelCase`
+
+   - 8.1 Named constructors → `MyWidget.large()`
+   - 8.2 Methods / functions → `handleTap()`
+   - 8.3 Parameters → `fetchUser(String userId)`
+   - 8.4 Variables → `final userName = ''`
+   - 8.5 Constants → `const apiUrl = '...'`
+
+9. **Do not use `_` for local variables**  
+   Local variables are private by scope — no need for underscores.
+
+10. **Use short and meaningful names**  
+    → `var name = 'John';`  
+    Avoid long descriptive names unless essential.
+
+11. **Maintain consistency in folder, file, and class names**
+
+12. **Maintain consistent naming across the codebase**
+
+---
+
+### 💡 Method & Getter Usage
+
+13. **Avoid using `get` methods for logic**  
+    Use function names instead, with lowercase method names.
+
+    ✅
+
+    ```dart
+    Future<List<String>> fetchBooks() {}
+    ```
+
+    ❌
+
+    ```dart
+    get books => ...
+    ```
+
+14. **Getters must be pure**  
+    No side effects like I/O, logging, or state mutations.
+
+15. **Use verb phrases for method names**  
+    → `showBooks()`, `uploadFile()`, `deleteUser()`
+
+16. **Use `build...` prefix for widget-returning methods**  
+    Improves clarity and code readability.
+
+    ✅
+
+    ```dart
+    Widget buildLoginButton() {
+      return ElevatedButton(
+        onPressed: onLogin,
+        child: const Text('Login'),
+      );
+    }
+    ```
+
+17. **Getters must not cause side effects**  
+    Getters should only return computed values, never mutate state.
+
+---
+
+### 🔁 Async & Return Types
+
+18. **Always declare return types for functions**  
+    ✅ `String getUserName() => 'John';`
+
+19. **Use `Future<Type>` for async return values**  
+    ✅ `Future<List<Book>> fetchBooks()`
+
+20. **Use `Future<void>` for async functions with no return**  
+    ✅ `Future<void> saveUser() async { ... }`
+
+---
+
+### 🧾 Function Signatures
+
+21. **Always annotate parameter types**  
+    ✅ `void fetchUser(String userId)`
+
+22. **Avoid type annotations in constructors**  
+    Constructors infer type from class fields.
+
+    ✅
+
+    ```dart
+    class Book {
+      final String title;
+      Book(this.title);
+    }
+    ```
+
+    ❌
+
+    ```dart
+    class Book {
+      final String title;
+      Book(String title) {
+        this.title = title;
+      }
+    }
+    ```
+
+23. **Use named parameters for readability**  
+    ✅ `void createUser({required String name, required int age})`
+
+24. **Do not describe parameter meaning in method name**  
+    ✅ `void fetchUser({required String userId})`  
+    ❌ `void fetchUserByUserId(String userId)`
 
 ---
