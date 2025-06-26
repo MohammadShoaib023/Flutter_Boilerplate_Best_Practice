@@ -107,3 +107,41 @@
 20. **Use `Future<void>` if no value is returned**  
     This clearly communicates that the function is asynchronous but doesn't produce a value.  
     ✅ `Future<void> saveUser() async { ... }`
+
+21. **Always annotate parameter types of functions**  
+    Makes APIs more readable and reduces ambiguity.
+
+    ✅
+
+    ```dart
+    void fetchUser(String userId) {}
+    ```
+
+    ❌
+
+    ```dart
+    void fetchUser(userId) {}
+    ```
+
+22. **Avoid type annotations inside constructors**  
+    Constructors inherit types from the class fields — repeating them is redundant.
+
+    ✅
+
+    ```dart
+    class Book {
+      final String title;
+      Book(this.title);
+    }
+    ```
+
+    ❌
+
+    ```dart
+    class Book {
+      final String title;
+      Book(String title) {
+        this.title = title;
+      }
+    }
+    ```
