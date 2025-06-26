@@ -149,3 +149,42 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ❌ `void fetchUserByUserId(String userId)`
 
 ---
+
+25. **Use nouns for variable names**  
+    Variable names should represent entities, not actions.
+
+    ✅
+
+    ```dart
+    var user = User();
+    var bookList = [];
+    ```
+
+    ❌
+
+    ```dart
+    var load = User(); // unclear noun/verb conflict
+    ```
+
+26. **Use short variable names in loops and small scopes**  
+    Concise naming like `i`, `item`, `e` is acceptable in loops or closures.
+
+    ✅
+
+    ```dart
+    for (var i = 0; i < users.length; i++) {
+      print(users[i]);
+    }
+
+    users.forEach((e) => print(e.name));
+    ```
+
+    ❌
+
+    ```dart
+    for (var userItemInList = 0; userItemInList < users.length; userItemInList++) {
+      print(users[userItemInList]);
+    }
+    ```
+
+---
