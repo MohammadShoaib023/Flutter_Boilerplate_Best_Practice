@@ -145,3 +145,33 @@
       }
     }
     ```
+
+23. **Use named parameters for readability**  
+    Improves clarity when calling functions with multiple arguments.
+
+    ✅
+
+    ```dart
+    void createUser({required String name, required int age}) {}
+    ```
+
+    ❌
+
+    ```dart
+    void createUser(String name, int age) {}
+    ```
+
+24. **Do not describe parameters in the method name**  
+    Let the parameter names and types speak for themselves. Avoid redundancy.
+
+    ✅
+
+    ```dart
+    void fetchUser({required String userId}) {}
+    ```
+
+    ❌
+
+    ```dart
+    void fetchUserByUserId(String userId) {}
+    ```
