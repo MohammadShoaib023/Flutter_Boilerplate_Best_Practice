@@ -97,7 +97,13 @@
 - Improves code clarity and tooling support
 - Prevents unintended return type inference issues
   String getUserName() {
-      return 'John';
+  return 'John';
   }
 
-19. Use Future<Type> as Return Type
+19. **Use `Future<Type>` as return type for async methods**  
+    Avoid relying on implicit return types for asynchronous operations.  
+    ✅ `Future<List<Book>> fetchBooks()`
+
+20. **Use `Future<void>` if no value is returned**  
+    This clearly communicates that the function is asynchronous but doesn't produce a value.  
+    ✅ `Future<void> saveUser() async { ... }`
