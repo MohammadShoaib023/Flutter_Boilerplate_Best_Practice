@@ -520,3 +520,24 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Prevents misreading or misplacing boolean flags in method calls.
+
+42. **Remove verb prefixes from boolean parameter names**  
+    The function name already conveys the action — boolean names should describe the condition.
+
+    ✅
+
+    ```dart
+    void showDialog({required bool barrierDismissible}) {}
+
+    showDialog(barrierDismissible: true);
+    ```
+
+    ❌
+
+    ```dart
+    void showDialog({required bool isBarrierDismissible}) {} // redundant
+
+    showDialog(isBarrierDismissible: true);
+    ```
+
+    > Keep boolean names concise and descriptive — avoid unnecessary "is/has/can" when the function provides full context.
