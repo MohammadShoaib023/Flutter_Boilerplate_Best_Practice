@@ -237,3 +237,20 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```dart
     var userName;
     ```
+
+30. **Do not use a type for top-level fields with initial values**  
+    Prefer `final` or `const` with type inference for global variables.
+
+    ✅
+
+    ```dart
+    const appName = 'FlutterApp';
+    final config = AppConfig();
+    ```
+
+    ❌
+
+    ```dart
+    const String appName = 'FlutterApp';
+    final AppConfig config = AppConfig();
+    ```
