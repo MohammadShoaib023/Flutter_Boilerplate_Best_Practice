@@ -280,3 +280,42 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
       User({required this.name, required this.age});
     }
     ```
+
+32. **Use `final` fields and `const` constructor for widgets**  
+    This enables Flutter to cache and reuse widget instances efficiently.
+
+    ✅
+
+    ```dart
+    class LoginButton extends StatelessWidget {
+      final VoidCallback onPressed;
+
+      const LoginButton({required this.onPressed, super.key});
+
+      @override
+      Widget build(BuildContext context) {
+        return ElevatedButton(
+          onPressed: onPressed,
+          child: const Text('Login'),
+        );
+      }
+    }
+    ```
+
+    ❌
+
+    ```dart
+    class LoginButton extends StatelessWidget {
+      VoidCallback onPressed;
+
+      LoginButton({required this.onPressed});
+
+      @override
+      Widget build(BuildContext context) {
+        return ElevatedButton(
+          onPressed: onPressed,
+          child: Text('Login'),
+        );
+      }
+    }
+    ```
