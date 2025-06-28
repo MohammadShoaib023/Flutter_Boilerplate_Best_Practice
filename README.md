@@ -188,3 +188,20 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
 ---
+
+27. **Avoid using a "Type" for local variables**  
+    Prefer type inference using `var` or `final` unless explicit type improves clarity or is required by context.
+
+    ✅
+
+    ```dart
+    var user = User();
+    final books = <Book>[];
+    ```
+
+    ❌
+
+    ```dart
+    User user = User();
+    List<Book> books = [];
+    ```
