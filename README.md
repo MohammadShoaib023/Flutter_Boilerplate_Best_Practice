@@ -560,3 +560,20 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Prefer positively framed conditions to improve code clarity and readability.
+
+44. **Remove type annotations from anonymous functions**  
+    Dart can infer types inside closures, so avoid redundancy.
+
+    ✅
+
+    ```dart
+    users.forEach((user) => print(user.name));
+    ```
+
+    ❌
+
+    ```dart
+    users.forEach((User user) => print(user.name)); // redundant
+    ```
+
+    > Keep lambda functions concise and readable — let the context define the type.
