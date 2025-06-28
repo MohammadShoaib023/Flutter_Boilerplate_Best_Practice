@@ -221,3 +221,19 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```dart
     var user = User();
     ```
+
+29. **Use an explicit type if the variable is declared without an initial value**  
+    Dart requires type annotations when no value is assigned at declaration.
+
+    ✅
+
+    ```dart
+    String userName;
+    int age;
+    ```
+
+    ❌
+
+    ```dart
+    var userName;
+    ```
