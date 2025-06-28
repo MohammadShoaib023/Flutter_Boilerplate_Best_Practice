@@ -692,3 +692,20 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > The best code tells its story without needing comments. Code should explain _what_ it does clearly.
+
+51. **Avoid grammatically complete sentences in code**  
+    Code should be readable, but not wordy or overly formal like English prose.
+
+    ✅
+
+    ```dart
+    if (user.isVerified) activateAccount();
+    ```
+
+    ❌
+
+    ```dart
+    if (userHasBeenSuccessfullyVerified) thenActivateUserAccount();
+    ```
+
+    > Code should _hint at language_, not _mimic it_. Balance clarity with brevity.
