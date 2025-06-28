@@ -499,3 +499,24 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Use descriptive, state-focused naming — not imperative verbs.
+
+41. **Use only named boolean arguments**  
+    Always use named parameters for booleans to make the intent explicit at the call site.
+
+    ✅
+
+    ```dart
+    void showDialog({required bool isDismissible}) {}
+
+    showDialog(isDismissible: true);
+    ```
+
+    ❌
+
+    ```dart
+    void showDialog(bool isDismissible) {}
+
+    showDialog(true); // unclear what 'true' means
+    ```
+
+    > Prevents misreading or misplacing boolean flags in method calls.
