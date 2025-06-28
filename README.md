@@ -615,3 +615,23 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > This ensures consistency and prevents naming from becoming visually noisy or hard to scan.
+
+47. **Write 2-letter acronyms in UPPERCASE**  
+    Keep 2-letter acronyms like `UI`, `DB`, `IP` fully capitalized for clarity.
+
+    ✅
+
+    ```dart
+    class UIController {}
+    final userDB = UserDB();
+    final ipAddress = '192.168.0.1';
+    ```
+
+    ❌
+
+    ```dart
+    class UiController {}
+    final userDb = UserDb();
+    ```
+
+    > Maintains naming consistency and highlights commonly known abbreviations.
