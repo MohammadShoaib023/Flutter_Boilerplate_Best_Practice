@@ -673,3 +673,22 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Your future self and teammates will thank you for writing readable code.
+
+50. **Make code read like a sentence**  
+    Aim for natural, expressive names and patterns that flow like readable language.
+
+    ✅
+
+    ```dart
+    if (user.hasAccess) openDashboard();
+    cart.addItem(product);
+    ```
+
+    ❌
+
+    ```dart
+    if (user.accFlg) opnDsh();
+    crt.ai(prd);
+    ```
+
+    > The best code tells its story without needing comments. Code should explain _what_ it does clearly.
