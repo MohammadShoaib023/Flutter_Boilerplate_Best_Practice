@@ -254,3 +254,29 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     const String appName = 'FlutterApp';
     final AppConfig config = AppConfig();
     ```
+
+31. **Prefer using immutable classes**  
+    Immutability improves predictability, thread safety, and debugging.  
+    Use `final` for all fields and avoid setters.
+
+    ✅
+
+    ```dart
+    class User {
+      final String name;
+      final int age;
+
+      const User({required this.name, required this.age});
+    }
+    ```
+
+    ❌
+
+    ```dart
+    class User {
+      String name;
+      int age;
+
+      User({required this.name, required this.age});
+    }
+    ```
