@@ -577,3 +577,41 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Keep lambda functions concise and readable — let the context define the type.
+
+45. **Use underscore (`_`) for unused parameters**  
+    Clearly indicate parameters that are intentionally unused to avoid confusion or linter issues.
+
+    ✅
+
+    ```dart
+    onTap: (_) => print('Tapped'),
+    ```
+
+    ❌
+
+    ```dart
+    onTap: (value) => print('Tapped'), // value is unused
+    ```
+
+    > Improves code clarity and satisfies static analysis.
+
+46. **Write 3+ letter acronyms/abbreviations like normal words**  
+    Capitalize only the first letter in camelCase or PascalCase, even for acronyms.
+
+    ✅
+
+    ```dart
+    class HttpClient {}
+    final jsonParser = JsonParser();
+    final apiService = ApiService();
+    ```
+
+    ❌
+
+    ```dart
+    class HTTPClient {}
+    final JSONParser = JSONParser();
+    final APIService = APIService();
+    ```
+
+    > This ensures consistency and prevents naming from becoming visually noisy or hard to scan.
