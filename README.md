@@ -368,3 +368,20 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
       }
     }
     ```
+
+34. **Prefer using `const` constructors whenever possible**  
+    Using `const` enables Flutter to cache and reuse widget instances efficiently, minimizing rebuilds.
+
+    ✅
+
+    ```dart
+    const CustomCard(title: 'Hello', subtitle: 'World');
+    ```
+
+    ❌
+
+    ```dart
+    CustomCard(title: 'Hello', subtitle: 'World');
+    ```
+
+    > Note: All fields in the class must be `final` to allow a `const` constructor.
