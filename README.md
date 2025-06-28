@@ -319,3 +319,52 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
       }
     }
     ```
+
+33. **Use named parameters for widget constructors**  
+    Makes it easier to understand and manage widget properties.
+
+    ✅
+
+    ```dart
+    class CustomCard extends StatelessWidget {
+      final String title;
+      final String subtitle;
+
+      const CustomCard({
+        required this.title,
+        required this.subtitle,
+        super.key,
+      });
+
+      @override
+      Widget build(BuildContext context) {
+        return Column(
+          children: [
+            Text(title),
+            Text(subtitle),
+          ],
+        );
+      }
+    }
+    ```
+
+    ❌
+
+    ```dart
+    class CustomCard extends StatelessWidget {
+      final String title;
+      final String subtitle;
+
+      const CustomCard(this.title, this.subtitle, {super.key});
+
+      @override
+      Widget build(BuildContext context) {
+        return Column(
+          children: [
+            Text(title),
+            Text(subtitle),
+          ],
+        );
+      }
+    }
+    ```
