@@ -709,3 +709,24 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Code should _hint at language_, not _mimic it_. Balance clarity with brevity.
+
+52. **Put the most descriptive noun at the end**  
+    Place the core concept or domain object at the end of a name to emphasize what it is.
+
+    ✅
+
+    ```dart
+    final userProfile;
+    final settingsPageController;
+    final errorMessage;
+    ```
+
+    ❌
+
+    ```dart
+    final profileUser;
+    final controllerSettingsPage;
+    final messageError;
+    ```
+
+    > This improves readability, especially when scanning files with multiple identifiers.
