@@ -205,3 +205,19 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     User user = User();
     List<Book> books = [];
     ```
+
+28. **Use `final` if the variable is not reassigned**  
+    This signals intent clearly and enables better optimizations.
+
+    ✅
+
+    ```dart
+    final user = User();
+    final count = users.length;
+    ```
+
+    ❌
+
+    ```dart
+    var user = User();
+    ```
