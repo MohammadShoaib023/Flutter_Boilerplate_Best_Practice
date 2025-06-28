@@ -404,3 +404,61 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Use `<T>` to enforce consistency and avoid runtime type errors.
+
+36. **Avoid repeating generics unnecessarily**  
+    Don’t duplicate type parameters when Dart can infer them.
+
+    ✅
+
+    ```dart
+    final List<String> names = [];
+    final Map<String, dynamic> config = {};
+    ```
+
+    ❌
+
+    ```dart
+    final List<String> names = <String>[];
+    final Map<String, dynamic> config = <String, dynamic>{};
+    ```
+
+    Dart infers the type from the declaration — keep it DRY.
+
+37. **Use explicit generics in APIs, parameters, or return types if type cannot be inferred**
+
+    When writing functions, classes, or exposing interfaces, use generics to maintain type safety and avoid `dynamic`.
+
+    ✅
+
+    ```dart
+    Future<List<User>> fetchUsers();
+    List<T> filter<T>(List<T> items, bool Function(T) predicate);
+    ```
+
+    ❌
+
+    ```dart
+    Future fetchUsers(); // returns dynamic
+    List filter(items, predicate); // loses type safety
+    ```
+
+38. **Do not use incomplete or raw generic types**  
+    Always specify the full type in generic classes like `List`, `Map`, `Future`, etc.
+
+    ✅
+
+    ```dart
+    List<String> names = [];
+    Map<String, int> scores = {};
+    Future<void> loadData() async {}
+    ```
+
+    ❌
+
+    ```dart
+    List names = [];
+    Map config = {};
+    Future fetchData() {}
+    ```
+
+    > Leaving generics blank defaults to `dynamic`, which breaks type safety.
