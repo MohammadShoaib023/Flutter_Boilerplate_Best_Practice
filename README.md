@@ -462,3 +462,21 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Leaving generics blank defaults to `dynamic`, which breaks type safety.
+
+39. **Name booleans with a “to be” prefix**  
+    Use `is`, `has`, `can`, `should`, `was`, etc., to reflect boolean nature.
+
+    ✅
+
+    ```dart
+    bool isLoggedIn = true;
+    bool hasPermission = false;
+    bool shouldRetry = true;
+    ```
+
+    ❌
+
+    ```dart
+    bool loginStatus = true;
+    bool permissionFlag = false;
+    ```
