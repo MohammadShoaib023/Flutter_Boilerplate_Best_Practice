@@ -541,3 +541,22 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Keep boolean names concise and descriptive — avoid unnecessary "is/has/can" when the function provides full context.
+
+43. **Use only positive boolean names**  
+    Avoid using negative logic in variable names to reduce mental overhead.
+
+    ✅
+
+    ```dart
+    if (isEnabled) {}
+    if (hasAccess) {}
+    ```
+
+    ❌
+
+    ```dart
+    if (!isNotEnabled) {} // double negative is confusing
+    if (!noAccess) {}     // unclear meaning
+    ```
+
+    > Prefer positively framed conditions to improve code clarity and readability.
