@@ -480,3 +480,22 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     bool loginStatus = true;
     bool permissionFlag = false;
     ```
+
+40. **Do not name booleans like commands or actions**  
+    Boolean names should describe state, not behavior. Avoid verb-like names.
+
+    ✅
+
+    ```dart
+    bool isVisible = true;
+    bool hasAccess = false;
+    ```
+
+    ❌
+
+    ```dart
+    bool showLogin = true; // sounds like a command
+    bool doFetch = false;
+    ```
+
+    > Use descriptive, state-focused naming — not imperative verbs.
