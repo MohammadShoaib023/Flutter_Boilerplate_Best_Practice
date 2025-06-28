@@ -385,3 +385,22 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Note: All fields in the class must be `final` to allow a `const` constructor.
+
+35. **Use generics if the type cannot be inferred**  
+    Always specify types explicitly when Dart cannot infer them, especially with collections or `Future`s.
+
+    ✅
+
+    ```dart
+    final List<String> names = <String>[];
+    Future<void> fetchData() async => <void>{};
+    ```
+
+    ❌
+
+    ```dart
+    final names = [];
+    Future fetchData() async => {};
+    ```
+
+    > Use `<T>` to enforce consistency and avoid runtime type errors.
