@@ -635,3 +635,22 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > Maintains naming consistency and highlights commonly known abbreviations.
+
+48. **Write 2-letter abbreviations like normal words**  
+    Treat 2-letter acronyms the same as other abbreviations: capitalize only the first letter in PascalCase and camelCase.
+
+    ✅
+
+    ```dart
+    class UiController {}
+    final userDb = UserDb();
+    ```
+
+    ❌
+
+    ```dart
+    class UIController {}
+    final userDB = UserDB();
+    ```
+
+    > This maintains visual consistency across all identifiers, no matter the acronym length.
