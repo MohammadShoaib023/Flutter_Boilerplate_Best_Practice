@@ -654,3 +654,22 @@ A consistent, scalable, and clean coding standard for building robust Flutter ap
     ```
 
     > This maintains visual consistency across all identifiers, no matter the acronym length.
+
+49. **Avoid abbreviations and use descriptive names**  
+    Clear, self-explanatory names make your code easier to read and maintain. Avoid cryptic short forms.
+
+    ✅
+
+    ```dart
+    final userProfile = UserProfile();
+    final totalPrice = cart.calculateTotalPrice();
+    ```
+
+    ❌
+
+    ```dart
+    final usrPfl = UserProfile();
+    final ttlPrc = cart.calcPrc();
+    ```
+
+    > Your future self and teammates will thank you for writing readable code.
